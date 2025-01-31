@@ -18,33 +18,6 @@ And also, it's not even a Neural Network!!
 ![image](https://github.com/user-attachments/assets/50fa8d0c-23fc-47f6-b125-96f1c7fb170e)
 ![image](https://github.com/user-attachments/assets/0266b8b3-6f44-450d-bc1d-2df9946640c5)
 
-## Key Features
-- Built entirely using NumPy
-- Implemented core logistic regression components from scratch
-- Image preprocessing and feature extraction
-- Hyperparameter tuning with learning rate analysis
-- Model performance visualization
-
-## Dataset
-- Car and non-car images from Kaggle's Car Non-Car dataset
-- Image size: 72x72 pixels
-- Preprocessed and normalized for training
-
-## Technical Implementation
-- Sigmoid activation function
-- Gradient descent optimization
-- Binary classification with 0.5 threshold
-
-## Model Performance
-- Training Accuracy: 99%
-- Testing Accuracy: 93-95%
-
-## Learning Curves
-![image](https://github.com/user-attachments/assets/12f4bef7-0840-44ef-917c-17b932c37acf)
-
-## Function Representation
-![image](https://github.com/user-attachments/assets/f2beeebd-6d60-40d5-8787-741ba96d1588)
-
 ## Requirements
 - NumPy
 - Matplotlib
@@ -127,6 +100,33 @@ predict_from_png(car_image_path)
 predict_from_png(non_car_image_path)
 
 ```
+
+## Key Features
+- Built entirely using NumPy
+- Implemented core logistic regression components from scratch
+- Image preprocessing and feature extraction
+- Hyperparameter tuning with learning rate analysis
+- Model performance visualization
+
+## Dataset
+- Car and non-car images from Kaggle's Car Non-Car dataset
+- Image size: 72x72 pixels
+- Preprocessed and normalized for training
+
+## Technical Implementation
+- Sigmoid activation function
+- Gradient descent optimization
+- Binary classification with 0.5 threshold
+
+## Model Performance
+- Training Accuracy: 99%
+- Testing Accuracy: 93-95%
+
+## Learning Curves
+![image](https://github.com/user-attachments/assets/12f4bef7-0840-44ef-917c-17b932c37acf)
+
+## Function Representation
+![image](https://github.com/user-attachments/assets/f2beeebd-6d60-40d5-8787-741ba96d1588)
 
 ## Usage
 1. Prepare your dataset
