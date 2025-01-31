@@ -44,19 +44,19 @@ this is what my model's reconstruction of its learned parameters of **what is a 
 
 ## Installation
 ```bash
-pip install numpy matplotlib pillow scipy
+pip install numpy matplotlib pillow scipy pickle
 ```
 ## Prediction Usage Example
 1. Make sure the input image is a .png
 2. Download just the **parameters.pkl** file
 3. Set the image path in the code and Run predict_from_png(path)
-   ```
-   import pickle
+   
+```
+import pickle
 import numpy as np
 from PIL import Image
 import matplotlib.pyplot as plt
 
-# Load pre-trained parameters
 with open('parameters.pkl', 'rb') as f:
     p = pickle.load(f)
 
@@ -66,22 +66,18 @@ def predict_from_png(image_path, w=p["w"], b=p["b"]):
     img = img.resize((72, 72))
     img_array = np.array(img) / 255.0
     
-    # Predict
     Y_prediction = sigmoid(np.dot(w.T, img_array.reshape(72 * 72 * 4, 1)) + b)
     
-    # Visualize image
     plt.imshow(img)
     plt.axis('off')
     plt.show()
     
-    # Print prediction
     isCar = Y_prediction > 0.5
     print("Prediction:", "Car" if isCar else "Non-Car")
     print(f"Car Probability: {Y_prediction[0][0]*100:.2f}%")
     
     return Y_prediction
 
-# Example usage
 car_image_path = 'path/to/car_image.png'
 non_car_image_path = 'path/to/non_car_image.png'
 
@@ -89,9 +85,6 @@ predict_from_png(car_image_path)
 predict_from_png(non_car_image_path)
 
 ```
-
-
-
 ## Example Output
 ![image](https://github.com/user-attachments/assets/5b9acb32-51c7-48e5-b900-3515be1099a7)
 
