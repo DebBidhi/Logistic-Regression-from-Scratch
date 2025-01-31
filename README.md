@@ -12,8 +12,7 @@ This project implements a logistic regression model from scratch to classify ima
 
 The above image is reconstructed with the ``visualize_learned_car()`` function that is implemented within the notebook. The purpose of this is to see how the model imagines a car from all the learning, and it's incredible to think it's learned all this within ~10 seconds of training time. ``Time taken for model training: 10.768696546554565 seconds``
 
-And also, it's not even a Neural Network!! [*technically, you can call it a single-layer, single-hidden-unit NN.]
-
+And also, it's not even a Neural Network!!
 
 ## Key Features
 - Built entirely using NumPy
