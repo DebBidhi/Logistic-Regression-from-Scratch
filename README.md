@@ -14,6 +14,10 @@ The above image is reconstructed with the ``visualize_learned_car()`` function t
 
 And also, it's not even a Neural Network!!
 
+## Example Output
+![image](https://github.com/user-attachments/assets/50fa8d0c-23fc-47f6-b125-96f1c7fb170e)
+![image](https://github.com/user-attachments/assets/0266b8b3-6f44-450d-bc1d-2df9946640c5)
+
 ## Key Features
 - Built entirely using NumPy
 - Implemented core logistic regression components from scratch
@@ -123,10 +127,6 @@ predict_from_png(car_image_path)
 predict_from_png(non_car_image_path)
 
 ```
-## Example Output
-![image](https://github.com/user-attachments/assets/50fa8d0c-23fc-47f6-b125-96f1c7fb170e)
-![image](https://github.com/user-attachments/assets/0266b8b3-6f44-450d-bc1d-2df9946640c5)
-
 
 ## Usage
 1. Prepare your dataset
