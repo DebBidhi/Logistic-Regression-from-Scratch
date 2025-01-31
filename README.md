@@ -8,7 +8,8 @@ This project implements a logistic regression model from scratch to classify ima
 ### Model's Car Perception
 **This is what my model's reconstruction of its learned parameters of what is a car!**
 
-![image](https://github.com/user-attachments/assets/b53660ea-7708-422a-a499-428c1cfd38d6)
+![image](https://github.com/user-attachments/assets/b8483ac2-67e5-45b0-b86e-2e339cf08897)
+
 
 ## Key Features
 - Built entirely using NumPy
