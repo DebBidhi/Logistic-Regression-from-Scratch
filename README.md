@@ -10,7 +10,7 @@ This project implements a logistic regression model from scratch to classify ima
 
 ![image](https://github.com/user-attachments/assets/b8483ac2-67e5-45b0-b86e-2e339cf08897)
 
-The above image is reconstructed with the ``visualize_learned_car()`` function that is implemented within the notebook. The purpose of this is to see how the model imagines a car from all the learning, and it's incredible to think it's learned all this within ~10 seconds. ``Time taken: 10.825410604476929 seconds.``
+The above image is reconstructed with the ``visualize_learned_car()`` function that is implemented within the notebook. The purpose of this is to see how the model imagines a car from all the learning, and it's incredible to think it's learned all this within ~10 seconds of training time. ``Time taken: 10.825410604476929 seconds.``
 
 And also, it's not even a Neural Network!! [*technically, you can call it a single-layer, single-hidden-unit NN.]
 
