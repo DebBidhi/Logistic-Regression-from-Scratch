@@ -7,7 +7,7 @@ This project implements a logistic regression model from scratch to classify ima
 
 ### Model's Car Perception
 ![image](https://github.com/user-attachments/assets/b53660ea-7708-422a-a499-428c1cfd38d6)
-this is what my model's reconstruction of its learned parameters of **what is a car!**
+This is what my model's reconstruction of its learned parameters of **what is a car!**
 
 ## Key Features
 - Built entirely using NumPy
@@ -41,6 +41,7 @@ this is what my model's reconstruction of its learned parameters of **what is a 
 - Matplotlib
 - Pillow (PIL)
 - SciPy
+- pickle
 
 ## Installation
 ```bash
@@ -52,31 +53,63 @@ pip install numpy matplotlib pillow scipy pickle
 3. Set the image path in the code and Run predict_from_png(path)
    
 ```
-import pickle
-import numpy as np
+import requests
+from io import BytesIO
 from PIL import Image
+import numpy as np
 import matplotlib.pyplot as plt
+import pickle
+
 
 with open('parameters.pkl', 'rb') as f:
     p = pickle.load(f)
 
-def predict_from_png(image_path, w=p["w"], b=p["b"]):
-    # Load and preprocess image
+def sigmoid(z):
+    """
+    Compute the sigmoid of z
+    """
+    return 1 / (1 + np.exp(-z))
+
+def predict_from_png(image_path, w = p["w"], b = p["b"]):
+    """
+    Given any png image path it predicts whether it's a car or not
+
+    Arguments:
+    image_path -- path to the image
+    w -- weights, a numpy array of size (num_px * num_px * 3, 1)
+    b -- bias, a scalar
+
+    Returns:
+    Y_prediction -- a numpy array (vector) containing all predictions (0/1) for the examples in X
+    """
+
     img = Image.open(image_path)
     img = img.resize((72, 72))
-    img_array = np.array(img) / 255.0
-    
+    img_array = np.array(img)
+
+    img_array = img_array / 255.0
+
     Y_prediction = sigmoid(np.dot(w.T, img_array.reshape(72 * 72 * 4, 1)) + b)
     
+    plt.figure(figsize=(10, 6))
     plt.imshow(img)
     plt.axis('off')
-    plt.show()
-    
+
     isCar = Y_prediction > 0.5
-    print("Prediction:", "Car" if isCar else "Non-Car")
-    print(f"Car Probability: {Y_prediction[0][0]*100:.2f}%")
     
-    return Y_prediction
+    Pred_Probablity = Y_prediction[0][0] * 100
+    
+    prediction_text = "Prediction: Car" if isCar else "Prediction: Not a Car"
+    probability_text = f"Probability: {Pred_Probablity:.5f}%"
+    
+    plt.text(10, 20, prediction_text, color='white', 
+             fontsize=12, fontweight='bold', 
+             bbox=dict(facecolor='green' if isCar else 'red', alpha=0.7))
+    plt.text(10, 50, probability_text, color='white', 
+             fontsize=10, 
+             bbox=dict(facecolor='black', alpha=0.7))
+    
+    plt.show()
 
 car_image_path = 'path/to/car_image.png'
 non_car_image_path = 'path/to/non_car_image.png'
@@ -86,11 +119,13 @@ predict_from_png(non_car_image_path)
 
 ```
 ## Example Output
-![image](https://github.com/user-attachments/assets/5b9acb32-51c7-48e5-b900-3515be1099a7)
+![image](https://github.com/user-attachments/assets/50fa8d0c-23fc-47f6-b125-96f1c7fb170e)
+![image](https://github.com/user-attachments/assets/0266b8b3-6f44-450d-bc1d-2df9946640c5)
+
 
 ## Usage
 1. Prepare your dataset
-2. Run the logistic regression script
+2. Run the logistic regression NoteBook
 3. Analyze model performance and visualizations
 
 ## License
