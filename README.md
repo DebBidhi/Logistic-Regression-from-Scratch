@@ -128,6 +128,9 @@ predict_from_png(non_car_image_path)
 ## Function Representation
 ![image](https://github.com/user-attachments/assets/f2beeebd-6d60-40d5-8787-741ba96d1588)
 
+## Calculation 
+![image](https://github.com/user-attachments/assets/5d27de4b-c861-4985-a080-54dd8ef600e1)
+
 ## Usage
 1. Prepare your dataset
 2. Run the logistic regression NoteBook
